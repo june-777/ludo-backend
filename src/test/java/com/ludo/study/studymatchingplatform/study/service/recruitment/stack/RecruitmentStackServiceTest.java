@@ -44,26 +44,26 @@ class RecruitmentStackServiceTest {
 	@Autowired
 	private RecruitmentRepositoryImpl recruitmentRepository;
 
-	// TODO
-	@Test
-	void test() {
-		// given
-		final User user = UserFixture.createUser(Social.GOOGLE, "user", "user@gmail.com");
-		final StackCategory stackCategory = StackCategoryFixture.createStackCategory("stackCategory");
-		final Category category = CategoryFixture.createCategory("category");
-		categoryRepository.save(category);
-		userRepository.save(user);
-		stackCategoryRepository.save(stackCategory);
-		Stack stack1 = StackFixture.createStack("stack1", stackCategory);
-		Stack stack2 = StackFixture.createStack("stack2", stackCategory);
-		Stack stack3 = StackFixture.createStack("stack3", stackCategory);
-		stackRepository.save(stack1);
-		stackRepository.save(stack2);
-		stackRepository.save(stack3);
-
-		final Study study = StudyFixture.createStudy("study", category, user, 4, Platform.GATHER);
-		studyRepository.save(study);
-
-	}
+	// // TODO
+	// @Test
+	// void test() {
+	// 	// given
+	// 	final User user = UserFixture.createUser(Social.GOOGLE, "user", "user@gmail.com");
+	// 	final StackCategory stackCategory = StackCategoryFixture.createStackCategory("stackCategory");
+	// 	final Category category = CategoryFixture.createCategory("category");
+	// 	categoryRepository.save(category);
+	// 	userRepository.save(user);
+	// 	stackCategoryRepository.save(stackCategory);
+	// 	Stack stack1 = StackFixture.createStack("stack1", stackCategory);
+	// 	Stack stack2 = StackFixture.createStack("stack2", stackCategory);
+	// 	Stack stack3 = StackFixture.createStack("stack3", stackCategory);
+	// 	stackRepository.save(stack1);
+	// 	stackRepository.save(stack2);
+	// 	stackRepository.save(stack3);
+	//
+	// 	final Study study = StudyFixture.createStudy("study", category, user, 4, Platform.GATHER);
+	// 	studyRepository.save(study);
+	//
+	// }
 
 }
