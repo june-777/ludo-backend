@@ -30,14 +30,11 @@ class StackRepositoryImplTest {
 	@CsvSource(value = {"백엔드:spring", "프론트엔드:nextJs", "데이터베이스:mySql", "언어:java", "데브옵스:jenkins"}, delimiter = ':')
 	@Transactional
 	void 현재_비즈니스_요구사항에_포함되는_기술스택은_조회를_성공한다(String stackCategoryName, String stackName) {
-		// given
 		StackCategory stackCategory = StackCategoryFixture.createStackCategory(stackCategoryName);
 		Stack stack = StackFixture.createStack(stackName, stackCategory);
 		saveAllStackCategory(stackCategory);
 		saveAllStack(stack);
-		// when
 		List<Stack> stacks = stackRepository.findAll();
-		// then
 		assertThat(stacks)
 				.extracting("name")
 				.contains(stackName);
