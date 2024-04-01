@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ludo.study.studymatchingplatform.study.domain.recruitment.position.Position;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -49,4 +50,12 @@ public class PositionRepositoryImpl {
 	public Position save(final Position position) {
 		return positionJpaRepository.save(position);
 	}
+
+	@Transactional
+	public void remove(Position target) {
+		q.delete(position)
+				.where(position.id.eq(target.getId()))
+				.execute();
+	}
+
 }

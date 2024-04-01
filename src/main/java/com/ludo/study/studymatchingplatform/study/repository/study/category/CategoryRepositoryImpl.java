@@ -1,11 +1,11 @@
 package com.ludo.study.studymatchingplatform.study.repository.study.category;
 
-
 import static com.ludo.study.studymatchingplatform.study.domain.study.category.QCategory.*;
 
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ludo.study.studymatchingplatform.study.domain.study.category.Category;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -34,6 +34,13 @@ public class CategoryRepositoryImpl {
 						.from(category)
 						.where(category.name.eq(name))
 						.fetchOne());
+	}
+
+	@Transactional
+	public void remove(final Category target) {
+		q.delete(category)
+				.where(category.id.eq(target.getId()))
+				.execute();
 	}
 
 }
