@@ -38,6 +38,7 @@ class StackRepositoryImplTest {
 		assertThat(stacks)
 				.extracting("name")
 				.contains(stackName);
+
 	}
 
 	@ParameterizedTest
@@ -55,6 +56,9 @@ class StackRepositoryImplTest {
 		assertThat(stacks)
 				.extracting("name")
 				.doesNotContain(stackName);
+
+
+		//test
 	}
 
 	private void saveAllStackCategory(StackCategory... stackCategories) {
