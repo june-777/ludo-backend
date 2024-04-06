@@ -71,6 +71,8 @@ class StackRepositoryImplTest {
 		for (Stack stack : stacks) {
 			stackRepository.save(stack);
 		}
+
+
 	}
 
 }
