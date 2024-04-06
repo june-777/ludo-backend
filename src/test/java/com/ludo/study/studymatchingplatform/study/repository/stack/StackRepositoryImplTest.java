@@ -38,6 +38,7 @@ class StackRepositoryImplTest {
 		assertThat(stacks)
 				.extracting("name")
 				.contains(stackName);
+
 	}
 
 	@ParameterizedTest
