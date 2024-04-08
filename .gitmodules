@@ -1,0 +1,3 @@
+[submodule "src/main/resources/ludo-configuration"]
+	path = src/main/resources/ludo-configuration
+	url = https://github.com/june-777/ludo-configuration.git
