@@ -1,8 +1,6 @@
 spring:
-  profiles:
-    active: local
-    default: local
-
   config:
+    activate:
+      on-profile: local
     import:
       - ludo-configuration/application.yaml
