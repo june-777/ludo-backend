@@ -6,5 +6,3 @@ spring:
   config:
     import:
       - ludo-configuration/application.yaml
-
-
