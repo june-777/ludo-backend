@@ -13,6 +13,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.test.context.ActiveProfiles;
 
 import com.ludo.study.studymatchingplatform.study.domain.recruitment.Recruitment;
 import com.ludo.study.studymatchingplatform.study.domain.recruitment.applicant.Applicant;
@@ -42,6 +43,7 @@ import com.ludo.study.studymatchingplatform.user.fixture.user.UserFixture;
 import com.ludo.study.studymatchingplatform.user.service.dto.response.UserResponse;
 
 @ExtendWith(MockitoExtension.class)
+@ActiveProfiles("test")
 class StudyApplicantsServiceTest {
 
 	@Mock

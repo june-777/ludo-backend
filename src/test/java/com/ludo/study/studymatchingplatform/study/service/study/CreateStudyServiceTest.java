@@ -2,6 +2,7 @@ package com.ludo.study.studymatchingplatform.study.service.study;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ludo.study.studymatchingplatform.study.repository.study.category.CategoryRepositoryImpl;
@@ -11,6 +12,7 @@ import com.ludo.study.studymatchingplatform.user.repository.user.UserRepositoryI
 
 @SpringBootTest
 @Transactional
+@ActiveProfiles("test")
 class CreateStudyServiceTest {
 
 	@Autowired
