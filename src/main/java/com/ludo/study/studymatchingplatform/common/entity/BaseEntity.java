@@ -20,7 +20,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-@ToString(of = "createdDateTime")
+@ToString(of = {"createdDateTime", "updatedDateTime", "deletedDateTime"})
 public abstract class BaseEntity {
 
 	@CreatedDate

@@ -43,10 +43,12 @@ import com.ludo.study.studymatchingplatform.user.domain.user.User;
 import com.ludo.study.studymatchingplatform.user.repository.user.UserRepositoryImpl;
 
 import jakarta.persistence.EntityManager;
+import lombok.extern.slf4j.Slf4j;
 
 @SpringBootTest
 @Transactional
 @ActiveProfiles("test")
+@Slf4j
 class RecruitmentServiceTest {
 
 	@Autowired
@@ -117,6 +119,7 @@ class RecruitmentServiceTest {
 
 		// when
 		final Recruitment recruitment = recruitmentService.write(owner, request, study.getId());
+		log.info("Save Recruitment = {}", recruitment);
 
 		// then
 		assertThat(recruitment.getTitle()).isEqualTo("recruitment");
@@ -302,6 +305,7 @@ class RecruitmentServiceTest {
 						LocalDateTime.now().plusDays(5)
 				)
 		);
+		log.info("Save Recruitment = {}", recruitment);
 		study.registerRecruitment(recruitment);
 
 		// 포지션 생성
@@ -480,6 +484,7 @@ class RecruitmentServiceTest {
 						LocalDateTime.now().plusDays(5)
 				)
 		);
+		log.info("Save Recruitment = {}", recruitment);
 		study.registerRecruitment(recruitment);
 
 		final Position position1 = createPosition();
@@ -600,6 +605,7 @@ class RecruitmentServiceTest {
 						LocalDateTime.now().plusDays(5)
 				)
 		);
+		log.info("Save Recruitment = {}", recruitment);
 		study.registerRecruitment(recruitment);
 
 		final Position position1 = createPosition();
@@ -661,6 +667,7 @@ class RecruitmentServiceTest {
 						LocalDateTime.now().plusDays(5)
 				)
 		);
+		log.info("Save Recruitment = {}", recruitment);
 		study.registerRecruitment(recruitment);
 		study.changeStatus(StudyStatus.RECRUITING);
 

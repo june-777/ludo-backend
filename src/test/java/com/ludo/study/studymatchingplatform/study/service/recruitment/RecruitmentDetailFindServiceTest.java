@@ -36,9 +36,11 @@ import com.ludo.study.studymatchingplatform.user.repository.user.UserRepositoryI
 
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
 
 @SpringBootTest
 @ActiveProfiles("test")
+@Slf4j
 class RecruitmentDetailFindServiceTest {
 
 	@Autowired
@@ -77,6 +79,7 @@ class RecruitmentDetailFindServiceTest {
 	void 모집공고_상세를_조회한다() {
 		// given
 		Recruitment saveRecruitment = saveRecruitment();
+		log.info("Save Recruitment = {}", saveRecruitment);
 		// when
 		RecruitmentDetailsResponse recruitmentDetailsResponse = recruitmentDetailsFindService
 				.findRecruitmentDetails(saveRecruitment.getId());
@@ -93,6 +96,7 @@ class RecruitmentDetailFindServiceTest {
 		assertThat(recruitmentDetailsResponse.study().category().name()).isEqualTo(CATEGORY);
 
 		Recruitment findRecruitment = recruitmentRepository.findById(saveRecruitment.getId()).get();
+		log.info("Find Recruitment = {}", findRecruitment);
 		assertModifiedDateNotChange(saveRecruitment, findRecruitment);
 	}
 
@@ -105,11 +109,13 @@ class RecruitmentDetailFindServiceTest {
 	void 모집공고_상세를_조회하면_조회수_증가() {
 		// given
 		Recruitment saveRecruitment = saveRecruitment();
+		log.info("Save Recruitment = {}", saveRecruitment);
 		int expectedHits = 6;
 		// when
 		recruitmentDetailsFindService.findRecruitmentDetails(saveRecruitment.getId());
 		// then
 		Recruitment findRecruitment = recruitmentRepository.findById(saveRecruitment.getId()).get();
+		log.info("Find Recruitment = {}", findRecruitment);
 		assertThat(findRecruitment.getHits()).isEqualTo(expectedHits);
 		assertModifiedDateNotChange(saveRecruitment, findRecruitment);
 	}
