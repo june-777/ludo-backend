@@ -1,6 +1,7 @@
 package com.ludo.study.studymatchingplatform.study.fixture.recruitment;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import com.ludo.study.studymatchingplatform.study.domain.recruitment.Contact;
@@ -15,7 +16,14 @@ public class RecruitmentFixture {
 												int hits, String callUrl,
 												LocalDateTime endDateTime
 	) {
-		endDateTime = endDateTime == null ? LocalDateTime.now().plusDays(5).withNano(6) : endDateTime;
+		if (endDateTime == null) {
+			endDateTime = LocalDateTime.now().plusDays(5);
+			DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
+			String formattedDateTime = endDateTime.format(dateTimeFormatter);
+			endDateTime = LocalDateTime.parse(formattedDateTime);
+		}
+		// endDateTime = endDateTime == null ? LocalDateTime.now().plusDays(5).withNano(6) : endDateTime;
+
 		return Recruitment.builder()
 				.study(study)
 				.contact(Contact.KAKAO)
@@ -31,7 +39,14 @@ public class RecruitmentFixture {
 
 	public static Recruitment createRecruitmentWithoutStacksAndPositions(Study study, String title, String content,
 																		 String callUrl, LocalDateTime endDateTime) {
-		endDateTime = endDateTime == null ? LocalDateTime.now().plusDays(5).withNano(6) : endDateTime;
+		if (endDateTime == null) {
+			endDateTime = LocalDateTime.now().plusDays(5);
+			DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
+			String formattedDateTime = endDateTime.format(dateTimeFormatter);
+			endDateTime = LocalDateTime.parse(formattedDateTime);
+		}
+		// endDateTime = endDateTime == null ? LocalDateTime.now().plusDays(5).withNano(6) : endDateTime;
+
 		return Recruitment.builder()
 				.study(study)
 				.contact(Contact.KAKAO)
