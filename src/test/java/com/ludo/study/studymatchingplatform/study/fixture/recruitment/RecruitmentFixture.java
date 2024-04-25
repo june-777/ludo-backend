@@ -26,6 +26,7 @@ public class RecruitmentFixture {
 				.title(title)
 				.hits(hits)
 				.build();
+
 	}
 
 	public static Recruitment createRecruitmentWithoutStacksAndPositions(Study study, String title, String content,
