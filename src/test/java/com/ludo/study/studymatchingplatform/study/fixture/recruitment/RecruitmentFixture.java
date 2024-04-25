@@ -15,7 +15,7 @@ public class RecruitmentFixture {
 												int hits, String callUrl,
 												LocalDateTime endDateTime
 	) {
-		endDateTime = endDateTime == null ? LocalDateTime.now().plusDays(5) : endDateTime;
+		endDateTime = endDateTime == null ? LocalDateTime.now().plusDays(5).withNano(6) : endDateTime;
 		return Recruitment.builder()
 				.study(study)
 				.contact(Contact.KAKAO)
@@ -30,7 +30,7 @@ public class RecruitmentFixture {
 
 	public static Recruitment createRecruitmentWithoutStacksAndPositions(Study study, String title, String content,
 																		 String callUrl, LocalDateTime endDateTime) {
-		endDateTime = endDateTime == null ? LocalDateTime.now().plusDays(5) : endDateTime;
+		endDateTime = endDateTime == null ? LocalDateTime.now().plusDays(5).withNano(6) : endDateTime;
 		return Recruitment.builder()
 				.study(study)
 				.contact(Contact.KAKAO)

@@ -1104,7 +1104,7 @@ class RecruitmentServiceTest {
 				.applicantCount(4)
 				.contact(Contact.KAKAO)
 				.callUrl("x.com")
-				.recruitmentEndDateTime(LocalDateTime.now().plusMonths(3))
+				.recruitmentEndDateTime(LocalDateTime.now().plusMonths(3).withNano(6))
 				.build();
 	}
 
