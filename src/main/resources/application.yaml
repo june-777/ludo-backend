@@ -1,6 +1,6 @@
 spring:
   config:
-    activate:
-      on-profile: local
+#    activate:
+#      on-profile: local # --spring.profiles.active=local 일때만 읽어드린다. 즉, 옵션 없이 실행하면 기본값(의도했던)인 application.yml을 읽어드리지 못한다.
     import:
       - ludo-configuration/application.yaml
