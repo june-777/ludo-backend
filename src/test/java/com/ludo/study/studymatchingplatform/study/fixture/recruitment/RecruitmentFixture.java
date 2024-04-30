@@ -16,13 +16,7 @@ public class RecruitmentFixture {
 												int hits, String callUrl,
 												LocalDateTime endDateTime
 	) {
-		if (endDateTime == null) {
-			endDateTime = LocalDateTime.now().plusDays(5);
-			DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
-			String formattedDateTime = endDateTime.format(dateTimeFormatter);
-			endDateTime = LocalDateTime.parse(formattedDateTime);
-		}
-		// endDateTime = endDateTime == null ? LocalDateTime.now().plusDays(5).withNano(6) : endDateTime;
+		endDateTime = endDateTime == null ? LocalDateTime.now().plusDays(5) : endDateTime;
 
 		return Recruitment.builder()
 				.study(study)
@@ -39,13 +33,7 @@ public class RecruitmentFixture {
 
 	public static Recruitment createRecruitmentWithoutStacksAndPositions(Study study, String title, String content,
 																		 String callUrl, LocalDateTime endDateTime) {
-		if (endDateTime == null) {
-			endDateTime = LocalDateTime.now().plusDays(5);
-			DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
-			String formattedDateTime = endDateTime.format(dateTimeFormatter);
-			endDateTime = LocalDateTime.parse(formattedDateTime);
-		}
-		// endDateTime = endDateTime == null ? LocalDateTime.now().plusDays(5).withNano(6) : endDateTime;
+		endDateTime = endDateTime == null ? LocalDateTime.now().plusDays(5) : endDateTime;
 
 		return Recruitment.builder()
 				.study(study)
