@@ -3,4 +3,4 @@ spring:
     activate:
       on-profile: dev
     import:
-      - ludo-configuration/application-dev.yaml
+      - ludo-configuration/application-prod.yaml
