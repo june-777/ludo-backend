@@ -49,7 +49,7 @@ import lombok.extern.slf4j.Slf4j;
 @SuperBuilder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@ToString(of = {"id", "title", "modifiedDateTime"}, callSuper = true)
+@ToString(of = {"id", "title", "modifiedDateTime", "recruitmentEndDateTime"}, callSuper = true)
 @Slf4j
 public class Recruitment extends BaseEntity {
 
